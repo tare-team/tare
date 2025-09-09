@@ -1,3 +1,5 @@
+"""GraphQL schema definitions."""
+
 import strawberry
 
 @strawberry.type
