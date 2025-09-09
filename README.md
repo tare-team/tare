@@ -17,7 +17,20 @@ Initial monorepo scaffolding for the Tare data orchestration framework.  The lay
 
 ## Development
 
-### Python GraphQL API
+### Unified development environment
+
+Spin up all services with a single command:
+
+```bash
+uv run tare dev
+```
+
+This starts Redis and Postgres via Docker, runs the GraphQL API server, and
+launches the React development server. Stop with `CTRL+C`.
+
+### Individual services
+
+#### Python GraphQL API
 
 ```bash
 # Install dependencies for the GraphQL package
@@ -30,7 +43,7 @@ uv run --package tare-graphql uvicorn tare_graphql.main:app --reload
 uv run --package tare-graphql pytest python_modules/tare-graphql/tests -q
 ```
 
-### UI
+#### UI
 
 ```bash
 npm install --prefix js_modules/tare-ui
