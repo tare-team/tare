@@ -1,0 +1,4 @@
+# Default values for Tare Helm chart
+image:
+  repository: tare-example
+  tag: latest
