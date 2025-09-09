@@ -20,9 +20,14 @@ Initial monorepo scaffolding for the Tare data orchestration framework.  The lay
 ### Python GraphQL API
 
 ```bash
-pip install -r python_modules/tare-graphql/requirements.txt
-PYTHONPATH=python_modules/tare-graphql uvicorn tare_graphql.main:app --reload
-PYTHONPATH=python_modules/tare-graphql pytest python_modules/tare-graphql/tests -q
+# Install dependencies for the GraphQL package
+uv sync --package tare-graphql
+
+# Run the API
+uv run --package tare-graphql uvicorn tare_graphql.main:app --reload
+
+# Execute tests
+uv run --package tare-graphql pytest python_modules/tare-graphql/tests -q
 ```
 
 ### UI
